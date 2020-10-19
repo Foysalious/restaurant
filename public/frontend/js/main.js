@@ -318,3 +318,36 @@ function myFunction() {
 
 })(jQuery);
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+$(document).ready(function(){
+
+	$("#createMessage").submit(function(e) {
+		e.preventDefault();
+		
+
+		var formData = new FormData(this);
+	
+		
+		const newLocal = 'api/reserved';
+		$.ajax({
+		type:'POST',
+		url:newLocal,
+		data:formData,
+		cache:false,
+		contentType: false,
+		processData: false, 
+		success:function(data) {
+			swal("","Message successfully send","success");
+			$("#createMessage input").val('');
+			
+		}
+		});
+		
+	});
+
+});

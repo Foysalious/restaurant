@@ -88,6 +88,7 @@
 <script src="{{asset('frontend/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('frontend/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('frontend/js/jquery.timepicker.min.js')}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="http://sstmarinebd.com/Frontend/js/fencybox-2.min.js"></script>
 <script src="{{asset('frontend/js/scrollax.min.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>

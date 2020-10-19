@@ -87,36 +87,39 @@
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-					<form action="#" class="appointment-form">
+					<form id="createMessage">
 						<h3 class="mb-3">Book your Table</h3>
 						<div class="row">
+							
+							
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="name" class="form-control" placeholder="Name">
+									<input type="name" class="form-control" placeholder="Name" name="name">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Email">
+									<input type="email" class="form-control" placeholder="Email" name="email">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Phone">
+									<input type="text" class="form-control" placeholder="Phone" name="phone">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
 									<div class="input-wrap">
-										<input type="time" class="form-control" placeholder="Time">
+										<input type="time" class="form-control" placeholder="Time" name="date">
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">
+									<button type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">Book Your Table Now</button>
 								</div>
 							</div>
+						
 						</div>
 					</form>
 				</div>
