@@ -10177,3 +10177,7 @@ textarea.form-control {
     .contact-box p, .contact-box p a{
       color: #987b4e!important;
     }
+
+    .sending_mail{
+      display: none;
+    }

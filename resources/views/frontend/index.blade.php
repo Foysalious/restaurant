@@ -116,8 +116,18 @@
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
+									<input type="date" class="form-control" name="time">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
 									<button type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">Book Your Table Now</button>
 								</div>
+							</div>
+							<div class="col-md-12 sending_mail">
+								<div class=" alert alert-warning" role="alert">
+									Sending ...
+								  </div>
 							</div>
 						
 						</div>

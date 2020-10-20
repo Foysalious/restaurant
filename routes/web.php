@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\menuController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\templateController;
 use App\Http\Controllers\frontendController;
+use App\Mail\reservation;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,3 +90,4 @@ Route::group(['prefix' => 'adminContact'], function(){
     Route::post('/update/{contact:id}',[contactController::class,'update'])->name('contactUpdate');
     Route::post('/delete/{contact:id}',[contactController::class,'destroy'])->name('contactDelete');
 });
+

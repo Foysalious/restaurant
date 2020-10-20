@@ -328,6 +328,7 @@ $(document).ready(function(){
 
 	$("#createMessage").submit(function(e) {
 		e.preventDefault();
+		$('.sending_mail').fadeIn()
 		
 
 		var formData = new FormData(this);
@@ -344,6 +345,7 @@ $(document).ready(function(){
 		success:function(data) {
 			swal("","Message successfully send","success");
 			$("#createMessage input").val('');
+			$('.sending_mail').fadeOut()
 			
 		}
 		});

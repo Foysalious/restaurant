@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReservationMail;
 
 class reservationController extends Controller
 {
@@ -20,9 +22,11 @@ class reservationController extends Controller
         $reservation->email          = $request->email;
         $reservation->phone          = $request->phone;
         $reservation->date          = $request->date;
+        $reservation->time          = $request->time;
         
        
-       
+       Mail::to('foysalrahman112@gmail.com')->send(new ReservationMail($reservation));
+       Mail::to($reservation->email )->send(new ReservationMail($reservation));
        
         $reservation->save();
 
