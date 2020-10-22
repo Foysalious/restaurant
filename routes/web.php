@@ -35,7 +35,7 @@ Route::get('/gallery',[frontendController::class,'gallery'])->name('gallery');
 Route::get('/menu',[frontendController::class,'menu'])->name('menu');
 
 
-Route::group(['prefix'=>'dashboard', 'middleware'=>['auth']], function(){
+
  //category route start
  Route::group(['prefix' => 'logo'], function(){
     Route::get('/',[LogoController::class, 'index'])->name('logoShow');
@@ -99,5 +99,4 @@ Route::group(['prefix' => 'reservation'], function(){
     Route::get('/',[reservationController::class, 'create'])->name('reservationShow');
     
     
-});
 });
