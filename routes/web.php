@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\galleryController;
 use App\Http\Controllers\Backend\homeSlider;
 use App\Http\Controllers\Backend\LogoController;
 use App\Http\Controllers\Backend\menuController;
+use App\Http\Controllers\Backend\reservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\templateController;
 use App\Http\Controllers\frontendController;
@@ -91,3 +92,9 @@ Route::group(['prefix' => 'adminContact'], function(){
     Route::post('/delete/{contact:id}',[contactController::class,'destroy'])->name('contactDelete');
 });
 
+
+Route::group(['prefix' => 'reservation'], function(){
+    Route::get('/',[reservationController::class, 'create'])->name('reservationShow');
+    
+    
+});

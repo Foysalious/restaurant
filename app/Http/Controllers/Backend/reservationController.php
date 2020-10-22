@@ -40,7 +40,8 @@ class reservationController extends Controller
      */
     public function create()
     {
-        //
+        $reservations = reservation::orderBy('id','desc')->get();
+        return view('backend.pages.reservation.manage',compact('reservations'));
     }
 
     /**

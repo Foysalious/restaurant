@@ -166,6 +166,22 @@
                        
                         <!-- nav single view end -->
 
+                        <!-- nav single view start -->
+                        <li >
+                            <a href="{{route('reservationShow')}}">
+                            <div class="left">
+                               reservation Info
+                            </div>
+                            <div class="right">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        
+                       
+                        <!-- nav single view end -->
+                        
                         
                     </ul>
                 </div>
