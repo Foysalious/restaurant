@@ -33,11 +33,11 @@
                             <div class="profile-dropdown">
                                 <ul>
                                     <li>
-                                        <a href="">My Profile</a>
+                                        {{-- <a href="{{ route('profile.edit', Auth::user()->id ) }}">My Profile</a> --}}
                                     </li>
                                     <li>
-                                        <a href="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                        <form id="logout-form" action="" method="POST" class="d-none">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
                                     </li>
@@ -47,7 +47,7 @@
                     </ul>
                 </div>            
             </div>
-            <!-- my profile end -->
+            
 
         </div>
     </div>

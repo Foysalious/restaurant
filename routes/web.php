@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\templateController;
 use App\Http\Controllers\frontendController;
 use App\Mail\reservation;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,11 @@ Route::get('/gallery',[frontendController::class,'gallery'])->name('gallery');
 Route::get('/menu',[frontendController::class,'menu'])->name('menu');
 
 
+Auth::routes();
 
- //category route start
+
+Route::group(['prefix'=>'dashboard', 'middleware'=>['auth']], function(){
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('backend_dashboard');
  Route::group(['prefix' => 'logo'], function(){
     Route::get('/',[LogoController::class, 'index'])->name('logoShow');
     Route::post('/store',[LogoController::class,'store'])->name('logoStore');
@@ -100,3 +104,6 @@ Route::group(['prefix' => 'reservation'], function(){
     
     
 });
+});
+
+
