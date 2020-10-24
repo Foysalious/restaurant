@@ -31,31 +31,42 @@
         <i class="fas fa-times"></i>
     </div>
 
-    <div class="cart-item">
-        <div class="row">
-            <div class="col-md-8 col-8">
-                <img src="images/dessert-1.jpg" width="32px" alt="">
-                <p class="color-gold">Desert Item </p>
-            </div>
-            <div class="col-md-4 col-4 text-right cart-right">
-                <p class="color-gold">USD 500</p>
-                <i class="fas fa-trash"></i>
-            </div>
-        </div>
+    <div id="cartItem">
+        
+
+        
+
+
     </div>
 
-    <div class="cart-item">
-        <div class="row">
-            <div class="col-md-8 col-8">
-                <img src="images/dessert-1.jpg" width="32px" alt="">
-                <p class="color-gold">Desert Item </p>
-            </div>
-            <div class="col-md-4 col-4 text-right cart-right">
-                <p class="color-gold">USD 500</p>
-                <i class="fas fa-trash"></i>
-            </div>
-        </div>
-    </div>
+    <script>
+        window.onload = ()=> {
+                axios.get('/cartitem').then(res => {
+                res.data.forEach(v => {
+                    let cartItem = `
+                        <div class="cart-item">
+                            <div class="row">
+                                <div class="col-md-8 col-8">
+                                    <img src="/images/menu/${v.image}" width="32px" alt="">
+                                    <p class="color-gold">${v.name} * ${v.qty} </p>
+                                </div>
+                                <div class="col-md-4 col-4 text-right cart-right">
+                                    <p class="color-gold">USD ${v.price}</p>
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `
+
+                    document.getElementById('cartItem').innerHTML += cartItem
+                })
+            })
+        }
+        
+
+
+    </script>
+    
 
     <div class="cart-total">
         <div class="row">

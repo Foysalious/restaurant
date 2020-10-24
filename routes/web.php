@@ -34,6 +34,8 @@ Route::get('/',[frontendController::class,'index'])->name('index');
 Route::get('/contact',[frontendController::class,'contact'])->name('contact');
 Route::get('/gallery',[frontendController::class,'gallery'])->name('gallery');
 Route::get('/menu',[frontendController::class,'menu'])->name('menu');
+Route::post('addtocart',[frontendController::class,'addToCart']);
+Route::get('cartitem',[frontendController::class,'cartitem']);
 
 
 Auth::routes();
@@ -101,9 +103,9 @@ Route::group(['prefix' => 'adminContact'], function(){
 
 Route::group(['prefix' => 'reservation'], function(){
     Route::get('/',[reservationController::class, 'create'])->name('reservationShow');
-    
-    
+
 });
 });
+
 
 

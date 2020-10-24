@@ -64,12 +64,7 @@
                                             </div>                                      
                                         </div>  
 
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Description</label>
-                                                <input type="text" class="form-control-file" name="description" >                                 
-                                            </div>                                      
-                                        </div>  
+                                       
 
                                         <div class="col-md-12">
                                             <div class="form-group">

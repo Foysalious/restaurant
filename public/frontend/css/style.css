@@ -9163,18 +9163,18 @@ h1, h2, h3, h4, h5,
     position: absolute;
     top: 50%;
     right: 0;
-    background: #987b4e;
     width: 30px;
     height: 30px;
     cursor: pointer;
     z-index: 15;
   }
-  .add_to_cart .fas{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+  .add_to_cart button{
+    background: #987b4e;
+    border: none;
     color: white;
+  }
+  button:focus{
+    outline: none;
   }
   .menus:hover {
     border-color: #987B4E; }

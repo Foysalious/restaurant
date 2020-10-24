@@ -28,7 +28,7 @@
 
 	<link rel="stylesheet" href="{{asset('frontend/css/bootstrap-datepicker.css')}}">
 	<link rel="stylesheet" href="{{asset('frontend/css/jquery.timepicker.css')}}">
-
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 	<link rel="stylesheet" href="{{asset('frontend/css/flaticon.css')}}">
 	<link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">

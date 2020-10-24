@@ -353,3 +353,18 @@ $(document).ready(function(){
 	});
 
 });
+
+
+
+
+$(document).ready(function(){
+	$('.add_to_cart').click(function(e){
+		let id = e.target.dataset.id ;
+		axios.post('/addtocart',{id}).then(res => {
+			$(".cart-list").css({
+				"transform" : "translateX(0)",
+				"transition": "0.4s ease-in-out"
+			})
+		})
+	})
+})
