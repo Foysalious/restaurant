@@ -68,7 +68,7 @@ class frontendController extends Controller
         endif;
 
         $request->session()->put('cart', $newCart);
-        
+
         return $this->cartitem($request);
 
     }   
@@ -76,5 +76,24 @@ class frontendController extends Controller
     public function cartitem(Request $request){
         $cart = $request->session()->get('cart') or null;
         return $cart;
+    }
+
+
+    public function delete_cart_item(Request $request, $id){
+        $cart = $this->cartitem($request) or Null;
+
+        $delete_id = $id;
+        $newCart = [];
+        if($cart){
+            foreach($cart as $single_cart){
+                if($single_cart['id'] != $delete_id){
+                    array_push($newCart, $single_cart);
+                }
+            }
+        }
+
+        $request->session()->put('cart', $newCart);
+
+        return $this->cartitem($request);
     }
 }

@@ -36,6 +36,7 @@ Route::get('/gallery',[frontendController::class,'gallery'])->name('gallery');
 Route::get('/menu',[frontendController::class,'menu'])->name('menu');
 Route::post('addtocart',[frontendController::class,'addToCart']);
 Route::get('cartitem',[frontendController::class,'cartitem']);
+Route::delete('delete/{id}',[frontendController::class,'delete_cart_item']);
 
 
 Auth::routes();

@@ -3600,13 +3600,26 @@ input[type="button"].btn-block {
   .cart-right .fa-trash{
     cursor: pointer;
   }
-  .go-checkout a{
+  .go-checkout button{
     background: #987b4e;
     display: inline-block;
     width: 100%;
     padding: 15px;
     color: white;
     text-align: center;
+  }
+  .place-order{
+    background: #987b4e;
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    border: none;
+  }
+  button:focus{
+    box-shadow: none;
+    outline: none;
   }
   .go-checkout a:hover{
     border: 1px solid #987b4e;
@@ -10180,4 +10193,12 @@ textarea.form-control {
 
     .sending_mail{
       display: none;
+    }
+    #h-item{
+      display: none;
+    }
+    #s-item img{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }

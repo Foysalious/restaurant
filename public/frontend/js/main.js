@@ -365,6 +365,70 @@ $(document).ready(function(){
 				"transform" : "translateX(0)",
 				"transition": "0.4s ease-in-out"
 			})
+			show_cart_item()
 		})
 	})
 })
+
+
+function show_cart_item(){
+	axios.get('/cartitem').then(res => {
+
+		if( !res.data.length ){
+			document.getElementById('s-item').style.display = 'block'
+			document.getElementById('h-item').style.display = 'none'
+		}else{
+			document.getElementById('s-item').style.display = 'none'
+			document.getElementById('h-item').style.display = 'block'
+		}
+		
+		
+		
+		total_ammount = 0
+		document.getElementById('cartItem').innerHTML = ''
+		res.data.forEach(v => {
+			let cartItem = `
+				<div class="cart-item">
+					<div class="row">
+						<div class="col-md-8 col-8">
+							<img src="/images/menu/${v.image}" width="32px" alt="">
+							<p class="color-gold">${v.name} * ${v.qty} </p>
+						</div>
+						<div class="col-md-4 col-4 text-right cart-right">
+							<p class="color-gold">USD ${v.price}</p>
+							<i class="fas fa-trash delete_button_cart" data-id="${v.id}"></i>
+						</div>
+					</div>
+				</div>
+			`
+			total_ammount += parseFloat(v.total)
+			
+			document.getElementById('cartItem').innerHTML += cartItem
+
+			
+
+		})
+
+		document.getElementById('total_cart_bal').innerHTML = `${total_ammount} USD`
+
+
+		delete_cart_init()
+	})
+
+
+	
+}
+
+
+
+function delete_cart_init(){
+	let delete_button = document.getElementsByClassName('delete_button_cart');
+	
+	for(let i in delete_button){
+		delete_button[i].onclick = (e) => {
+				axios.delete(`/delete/${e.target.dataset.id}`).then(
+					show_cart_item()
+				)
+		}
+	}
+}

@@ -41,26 +41,7 @@
 
     <script>
         window.onload = ()=> {
-                axios.get('/cartitem').then(res => {
-                res.data.forEach(v => {
-                    let cartItem = `
-                        <div class="cart-item">
-                            <div class="row">
-                                <div class="col-md-8 col-8">
-                                    <img src="/images/menu/${v.image}" width="32px" alt="">
-                                    <p class="color-gold">${v.name} * ${v.qty} </p>
-                                </div>
-                                <div class="col-md-4 col-4 text-right cart-right">
-                                    <p class="color-gold">USD ${v.price}</p>
-                                    <i class="fas fa-trash"></i>
-                                </div>
-                            </div>
-                        </div>
-                    `
-
-                    document.getElementById('cartItem').innerHTML += cartItem
-                })
-            })
+            show_cart_item()
         }
         
 
@@ -68,36 +49,69 @@
     </script>
     
 
-    <div class="cart-total">
-        <div class="row">
-            <div class="col-md-6 col-6">
-                <p>Sub Total</p>
-            </div>
-            <div class="col-md-6 col-6">
-                <p class="text-right">1400 USD</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-6">
-                <p>Delivery Charge</p>
-            </div>
-            <div class="col-md-6 col-6">
-                <p class="text-right">10 USD</p>
+    <div id="h-item">
+        <div class="cart-total">
+            <div class="row">
+                <div class="col-md-6 col-6">
+                    <p>Sub Total</p>
+                </div>
+                <div class="col-md-6 col-6">
+                    <p class="text-right" id="total_cart_bal"></p>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 col-6">
-                <p>Total</p>
-            </div>
-            <div class="col-md-6 col-6">
-                <p class="text-right">1410 USD</p>
-            </div>
+    
+        <div class="go-checkout">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Checkout
+            </button>
+            
         </div>
     </div>
 
-    <div class="go-checkout">
-        <a href="">Checkout</a>
+    <div id="s-item">
+        <img src="{{ asset('frontend/images/empty_cart.png') }}" alt="">
     </div>
 
 </div>
 <!-- cart list end -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Customer Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+        </div>
+        <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Customer Email</label>
+                <input type="email" required class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>Customer Phone</label>
+                <input type="text" required class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>Customer Address</label>
+                <textarea name=""  rows="2" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="place-order">Place Order</button>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
