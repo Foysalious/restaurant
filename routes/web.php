@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\galleryController;
 use App\Http\Controllers\Backend\homeSlider;
 use App\Http\Controllers\Backend\LogoController;
 use App\Http\Controllers\Backend\menuController;
+use App\Http\Controllers\Backend\openDayController;
 use App\Http\Controllers\Backend\reservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\templateController;
@@ -37,7 +38,7 @@ Route::get('/menu',[frontendController::class,'menu'])->name('menu');
 Route::post('addtocart',[frontendController::class,'addToCart']);
 Route::get('cartitem',[frontendController::class,'cartitem']);
 Route::delete('delete/{id}',[frontendController::class,'delete_cart_item']);
-Route::post('checkout',[frontendController::class,'checkout'])->name('orderStore');
+Route::post('/checkout',[frontendController::class,'checkout'])->name('orderStore');
 
 
 Auth::routes();
@@ -64,6 +65,13 @@ Route::group(['prefix' => 'about'], function(){
     Route::post('/store',[AboutController::class,'store'])->name('aboutStore');
     Route::post('/update/{about:id}',[AboutController::class,'update'])->name('aboutUpdate');
     Route::post('/delete/{about:id}',[AboutController::class,'destroy'])->name('aboutDelete');
+});
+
+Route::group(['prefix' => 'hours'], function(){
+    Route::get('/',[openDayController::class, 'index'])->name('hoursShow');
+    Route::post('/store',[openDayController::class,'store'])->name('hoursStore');
+    Route::post('/update/{hours:id}',[openDayController::class,'update'])->name('hoursUpdate');
+    Route::post('/delete/{hours:id}',[openDayController::class,'destroy'])->name('hoursDelete');
 });
 
 Route::group(['prefix' => 'chef'], function(){

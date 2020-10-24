@@ -1,7 +1,7 @@
 <!-- navbar start -->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="{{route('index')}}">
             <img src="{{asset('frontend/images/logo.png')}}" width="100px" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">

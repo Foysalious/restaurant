@@ -45,6 +45,19 @@
                         </li>
                         <!-- nav single view end -->
 
+                          <!-- nav single view start -->
+                          <li >
+                            <a href="{{route('hoursShow')}}">
+                            <div class="left">
+                                    hours
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-home"></i>
+                            </div>
+                            </a>
+                        </li>
+                        <!-- nav single view end -->
+
                         <!-- nav single view start -->
                         <li >
                         <a href="{{route('logoShow')}}">
