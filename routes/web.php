@@ -37,6 +37,7 @@ Route::get('/menu',[frontendController::class,'menu'])->name('menu');
 Route::post('addtocart',[frontendController::class,'addToCart']);
 Route::get('cartitem',[frontendController::class,'cartitem']);
 Route::delete('delete/{id}',[frontendController::class,'delete_cart_item']);
+Route::post('checkout',[frontendController::class,'checkout'])->name('orderStore');
 
 
 Auth::routes();

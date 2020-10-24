@@ -87,22 +87,23 @@
         </button>
         </div>
         <div class="modal-body">
-        <form action="">
+        <form action="{{route('orderStore')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label>Customer Name</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" name="name" required>
             </div>
             <div class="form-group">
                 <label>Customer Email</label>
-                <input type="email" required class="form-control" >
+                <input type="email" required class="form-control" name="email" >
             </div>
             <div class="form-group">
                 <label>Customer Phone</label>
-                <input type="text" required class="form-control" >
+                <input type="text" required class="form-control" name="phone" >
             </div>
             <div class="form-group">
                 <label>Customer Address</label>
-                <textarea name=""  rows="2" class="form-control"></textarea>
+                <textarea rows="2" class="form-control" name="address"></textarea>
             </div>
             <div class="form-group">
                 <button class="place-order">Place Order</button>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\menu;
+use App\Models\order;
+use App\Models\orderItem;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 class frontendController extends Controller
@@ -95,5 +98,36 @@ class frontendController extends Controller
         $request->session()->put('cart', $newCart);
 
         return $this->cartitem($request);
+    }
+
+
+
+    public function checkout(Request $request){
+        $cart = $this->cartitem($request) or null;
+
+        $order = new order();
+        $order->name = $request->name;
+        $order->email = $request->email;
+        $order->phone = $request->phone;
+        $order->address = $request->address;
+        $order->total_price = 0;
+
+        if($order->save()){
+            foreach($cart as $cart_item){
+                $item = new orderItem();
+                $item->item = $cart_item['name'];
+                $item->price = $cart_item['price'];
+                $item->qty = $cart_item['qty'];
+                $item->total = $cart_item['total'];
+                $item->image = $cart_item['image'];
+                $item->order()->associate($order);
+                $order->total_price += $item->total;
+                if($item->save()){
+                    $order->save();
+                }
+            }
+        }
+
+        return Response("Order Placed Successfully!", 200);
     }
 }
