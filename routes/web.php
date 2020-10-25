@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\homeSlider;
 use App\Http\Controllers\Backend\LogoController;
 use App\Http\Controllers\Backend\menuController;
 use App\Http\Controllers\Backend\openDayController;
+use App\Http\Controllers\Backend\orderController;
 use App\Http\Controllers\Backend\reservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\templateController;
@@ -108,6 +109,35 @@ Route::group(['prefix' => 'adminContact'], function(){
     Route::post('/store',[contactController::class,'store'])->name('contactStore');
     Route::post('/update/{contact:id}',[contactController::class,'update'])->name('contactUpdate');
     Route::post('/delete/{contact:id}',[contactController::class,'destroy'])->name('contactDelete');
+});
+
+Route::group(['prefix'=>'selling-history'],function(){
+
+    //pending order start
+    Route::get('/pending',[orderController::class,'index'])->name('pending.show');
+   
+    Route::get('/confirmed-order/{order:id}',[orderController::class,'confirmOrder'])->name('confirm-order');
+    //pending order end
+
+    //confirmed order start
+    Route::get('/confirmed',[orderController::class,'confirmed'])->name('confirmed.show');
+
+    Route::get('/delivered-order/{order:id}',[orderController::class,'deliveredOrder'])->name('delivered-order');
+    //confirmed order end
+
+    //delivered order show start
+    Route::get('/delivered',[orderController::class,'delivered'])->name('delivered.show');
+   
+    //delivered order show end
+
+    //cancelled order
+    Route::get('/cancel',[orderController::class,'cancel'])->name('cancel.show');
+   
+    Route::get('/cancelled-order/{order:id}',[orderController::class,'cancelledOrder'])->name('cancelled-order');
+
+
+
+
 });
 
 
