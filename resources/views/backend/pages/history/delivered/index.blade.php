@@ -99,6 +99,7 @@
                                 <td>Address</td>
                                 <td>Total</td>
                                 <td>Status</td>
+                                <td>Action</td>
                                
                             </tr>
                         </thead>
@@ -129,6 +130,9 @@
                                     @if( $order->order_status == 3 )
                                     <span class="badge badge-success">Delivered</span>
                                     @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('delivered.invoice.show',$order->id) }}" class="btn btn-primary" target="__blank">view order</a>
                                 </td>
 
                                 

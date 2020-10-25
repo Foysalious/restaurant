@@ -63,6 +63,7 @@
                                 <td>Address</td>
                                 <td>Total</td>
                                 <td>Status</td>
+                                <td>Invoice</td>
                                 
                             </tr>
                         </thead>
@@ -95,7 +96,10 @@
                                     @endif
                                 </td>
 
-                               
+                                <td>
+                                    <a href="{{ route('cancel.invoice.show',$order->id) }}" class="btn btn-primary" target="__blank">view order</a>
+                                </td>
+
 
                             </tr>
                             @endforeach

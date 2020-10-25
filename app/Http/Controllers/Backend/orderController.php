@@ -20,6 +20,16 @@ class orderController extends Controller
         return view('backend.pages.history.index',compact('orders'));
     }
 
+    public function showInvoice(order $order){
+        return view('backend.pages.history.invoice',compact('order'));
+    }
+    public function showConfirmedInvoice(order $order){
+        return view('backend.pages.history.confirmed.invoice',compact('order'));
+    }
+    public function showCancelInvoice(order $order){
+        return view('backend.pages.history.cancel.invoice',compact('order'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -69,5 +79,7 @@ class orderController extends Controller
         return redirect()->route('pending.show');
     }
 
-    
+    public function showDeliveredInvoice(order $order){
+        return view('backend.pages.history.delivered.invoice',compact('order'));
+    }
 }

@@ -115,24 +115,24 @@ Route::group(['prefix'=>'selling-history'],function(){
 
     //pending order start
     Route::get('/pending',[orderController::class,'index'])->name('pending.show');
-   
+    Route::get('/show-invoice/{order:id}',[orderController::class,'showInvoice'])->name('invoice.show');
     Route::get('/confirmed-order/{order:id}',[orderController::class,'confirmOrder'])->name('confirm-order');
     //pending order end
 
     //confirmed order start
     Route::get('/confirmed',[orderController::class,'confirmed'])->name('confirmed.show');
-
+    Route::get('/show-confirmed-invoice/{order:id}',[orderController::class,'showConfirmedInvoice'])->name('confirmed.invoice.show');
     Route::get('/delivered-order/{order:id}',[orderController::class,'deliveredOrder'])->name('delivered-order');
     //confirmed order end
 
     //delivered order show start
     Route::get('/delivered',[orderController::class,'delivered'])->name('delivered.show');
-   
+    Route::get('/show-delivered-invoice/{order:id}',[orderController::class,'showDeliveredInvoice'])->name('delivered.invoice.show');
     //delivered order show end
 
     //cancelled order
     Route::get('/cancel',[orderController::class,'cancel'])->name('cancel.show');
-   
+    Route::get('/show-cancel-invoice/{order:id}',[orderController::class,'showCancelInvoice'])->name('cancel.invoice.show');
     Route::get('/cancelled-order/{order:id}',[orderController::class,'cancelledOrder'])->name('cancelled-order');
 
 

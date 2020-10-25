@@ -91,6 +91,7 @@
                                 <td>
                                     <a href="{{ route('confirm-order', $order->id) }}" class=" btn-primary">Confirmed Order</a>
                                     <a href="{{ route('cancelled-order', $order->id) }}" class=" btn-primary">Cancelled Order</a>
+                                    <a href="{{ route('invoice.show',$order->id) }}" class="btn btn-primary" target="blank">view order</a>
                                 </td>
 
                             </tr>
