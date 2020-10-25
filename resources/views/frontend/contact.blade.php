@@ -15,7 +15,7 @@
     </div>
   </div>
 </section>
-
+@foreach(App\Models\contact::orderBy('id','desc')->get() as $contact) 
 <section class="ftco-section contact-section bg-light">
   <div class="container">
     <div class="row d-flex contact-info">
@@ -25,18 +25,18 @@
       <div class="w-100"></div>
       <div class="col-md-3 ">
         <div class="contact-box">
-          <p><span>Address:</span> 14 Westbourne Road, London, Islington, N7 8AU (Short walk from Upper St N1</p>
+        <p><span>Address:</span> {!!$contact->address!!}</p>
         </div>
       </div>
       <div class="col-md-3 ">
         <div class="contact-box">
-          <p><span>Tel:</span> <a href="tel://1234567920">020 7700 0555</a></p>
-          <p><span>Tel:</span> <a href="tel://1234567920">020 7700 0333</a></p>
+        <p><span>Tel:</span> <a href="tel://1234567920">{!!$contact->phone!!}</a></p>
+         
         </div>
       </div>
       <div class="col-md-3 ">
         <div class="contact-box">
-          <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@memsaabislington.co.uk</a></p>
+        <span>Email:</span>{!!$contact->email!!} <a href="{{$contact->email}}"></a>
         </div>
 
 
@@ -50,6 +50,7 @@
     </div>
   </div>
 </section>
+@endforeach
 <section class="ftco-section ftco-no-pt contact-section">
   <div class="container">
     <div class="row d-flex align-items-stretch no-gutters">

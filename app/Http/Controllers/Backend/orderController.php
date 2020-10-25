@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\order;
 use Illuminate\Http\Request;
+use  App\Mail\CancelOrder;
+use  App\Mail\ConfirmOrder;
+use  App\Mail\DeliveredOrder;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Mail;
 
 class orderController extends Controller
 {
@@ -40,6 +44,8 @@ class orderController extends Controller
         $order->order_status= 2;
         $order->save();
         $request->session()->flash('confirmed','Order Confirmed');
+        Mail::to($order->email)->send(new ConfirmOrder($order, 'Your order is confirmed'));
+        Mail::to('test@gmail.com')->send(new ConfirmOrder($order, 'Order Confirmed'));
         return redirect()->route('pending.show');
     }
 
@@ -61,6 +67,8 @@ class orderController extends Controller
         $order->order_status= 3;
         $order->save();
         $request->session()->flash('delivered','Order Confirmed');
+        Mail::to($order->email)->send(new DeliveredOrder($order,'Your order is delivered'));
+        Mail::to('test@gmail.com')->send(new DeliveredOrder($order,'Order delivered'));
         return redirect()->route('pending.show');
     }
 
@@ -75,6 +83,9 @@ class orderController extends Controller
     {
         $order->order_status= 4;
         $order->save();
+        Mail::to($order->email)->send(new CancelOrder($order,'Your order has been cancelled'));
+        Mail::to('test@gmail.com')->send(new CancelOrder($order,'Order cancelled'));
+
         $request->session()->flash('cancelled','Order Confirmed');
         return redirect()->route('pending.show');
     }

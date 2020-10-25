@@ -13,36 +13,24 @@
 		<div class="home-slider owl-carousel js-fullheight">
 
 			<!-- banner item start -->
-			<div class="slider-item js-fullheight" style="background-image:url({{asset('frontend/images/tandoori.jpeg')}});">
+			@foreach(App\Models\slider::orderBy('id','desc')->get() as $slider) 
+			<div class="slider-item js-fullheight" style="background-image:url({{asset('images/slider/'.$slider->image)}});">
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
 						<div class="col-md-12 ftco-animate">
 							<div class="text w-100 mt-5 text-center">
 								<span class="subheading">Memsaab Indian Restaurant</h2></span>
-								<h1>TANDOORI CHICKEN</h1>
+							<h1>{{$slider->title}}</h1>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			@endforeach
 			<!-- banner item end -->
 
-			<!-- banner item start -->
-			<div class="slider-item js-fullheight" style="background-image:url({{asset('frontend/images/jalfrazi.jpeg')}});">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-						<div class="col-md-12 ftco-animate">
-							<div class="text w-100 mt-5 text-center">
-								<span class="subheading">Memsaab Indian Restaurant</h2></span>
-								<h1>JALFRAZI CHICKEN LAMB PRAWN</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- banner item end -->
+			
 
 			
 
@@ -133,26 +121,23 @@
 						</div>
 					</form>
 				</div>
+				@foreach(App\Models\About::orderBy('id','desc')->get() as $about) 
 				<div class="col-sm-8 wrap-about py-5 ftco-animate img" style="background-image: url(images/about.jpg);">
 					<div class="row pb-5 pb-md-0">
 						<div class="col-md-12 col-lg-7">
 							<div class="heading-section mt-5 mb-4">
 								<div class="pl-lg-3 ml-md-5">
 									<span class="subheading">About</span>
-									<h2 class="mb-4">Welcome to Memsaab Indian Restaurant &amp; Takeaway Islington</h2>
+								<h2 class="mb-4">{{$about->title}}</h2>
 								</div>
 							</div>
 							<div class="pl-lg-3 ml-md-5">
-								<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came
-									from it would have been rewritten a thousand times and everything that was left from
-									its origin would be the word "and" and the Little Blind Text should turn around and
-									return to its own, safe country. A small river named Duden flows by their place and
-									supplies it with the necessary regelialia. It is a paradisematic country, in which
-									roasted parts of sentences fly into your mouth.</p>
+								<p>{!!$about->title!!}</p>
 							</div>
 						</div>
 					</div>
 				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>
@@ -167,60 +152,25 @@
 					<h2 class="mb-4">Our Master Chef</h2>
 				</div>
 			</div>
+			
 			<div class="row">
+				@foreach(App\Models\Chef::orderBy('id','desc')->get() as $chef) 
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="staff">
-						<div class="img" style="background-image: url({{asset('frontend/images/chef-4.jpg')}});"></div>
+						<div class="img" style="background-image: url({{asset('images/chef/'.$chef->image)}});"></div>
 						<div class="text px-4 pt-2">
-							<h3>John Gustavo</h3>
-							<span class="position mb-2">CEO, Co Founder</span>
+							<h3>{{$chef->name}}</h3>
+						<span class="position mb-2">{{$chef->designation}}</span>
 							<div class="faded">
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
+								<p>{{$chef->description}}</p>
 							
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img" style="background-image: url({{asset('frontend/images/chef-2.jpg')}});"></div>
-						<div class="text px-4 pt-2">
-							<h3>Michelle Fraulen</h3>
-							<span class="position mb-2">Head Chef</span>
-							<div class="faded">
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img" style="background-image: url({{asset('frontend/images/chef-3.jpg')}});"></div>
-						<div class="text px-4 pt-2">
-							<h3>Alfred Smith</h3>
-							<span class="position mb-2">Chef Cook</span>
-							<div class="faded">
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img" style="background-image: url({{asset('frontend/images/chef-1.jpg')}});"></div>
-						<div class="text px-4 pt-2">
-							<h3>Antonio Santibanez</h3>
-							<span class="position mb-2">Chef Cook</span>
-							<div class="faded">
-								<p>I am an ambitious workaholic, but apart from that, pretty simple person.</p>
-								
-							</div>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
+			
 		</div>
 	</section>
 	<!-- chief section end -->

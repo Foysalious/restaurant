@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderPlaceMail;
 use App\Models\menu;
 use App\Models\order;
 use App\Models\orderItem;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class frontendController extends Controller
 {
@@ -128,6 +131,8 @@ class frontendController extends Controller
             }
         }
 
+        Mail::to($order->email)->send(new OrderPlaceMail($order,'Your order has been placed'));
+        Mail::to('test@gmail.com')->send(new OrderPlaceMail($order,'Order placed'));
         return Response("Order Placed Successfully!", 200);
     }
 }
