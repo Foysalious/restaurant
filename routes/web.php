@@ -136,8 +136,6 @@ Route::group(['prefix'=>'selling-history'],function(){
     Route::get('/cancelled-order/{order:id}',[orderController::class,'cancelledOrder'])->name('cancelled-order');
 
 
-
-
 });
 
 
