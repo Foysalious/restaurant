@@ -19,7 +19,7 @@ class menuController extends Controller
      */
     public function index()
     {
-        $menus = menu::orderBy('id','desc')->get();
+        $menus = menu::orderBy('id','asc')->get();
         return view('backend.pages.menu.manage',compact('menus'));
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2020 at 09:02 AM
+-- Generation Time: Oct 27, 2020 at 11:59 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -61,9 +61,14 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(4, 'Dessert', '2020-10-18 02:19:23', '2020-10-22 02:20:03'),
-(5, 'Meals', '2020-10-18 02:19:46', '2020-10-18 02:19:46'),
-(6, 'Starters', '2020-10-18 02:20:02', '2020-10-18 02:20:02');
+(4, 'SIDE DISHES', '2020-10-18 02:19:23', '2020-10-27 04:36:18'),
+(5, 'VEGETARIAN MAIN DISH', '2020-10-18 02:19:46', '2020-10-27 04:36:11'),
+(6, 'HYDERABADI DUM BIRIYANI', '2020-10-18 02:20:02', '2020-10-27 04:36:01'),
+(12, 'SUNDRIES', '2020-10-27 04:40:44', '2020-10-27 04:40:44'),
+(13, 'BANQUET NIGHT', '2020-10-27 04:40:58', '2020-10-27 04:40:58'),
+(14, 'set meals for two', '2020-10-27 04:41:17', '2020-10-27 04:41:17'),
+(15, 'VEGETARIAN FOR TWO', '2020-10-27 04:41:23', '2020-10-27 04:41:23'),
+(16, 'SUNDAY LUNCH', '2020-10-27 04:41:29', '2020-10-27 04:41:29');
 
 -- --------------------------------------------------------
 
@@ -214,22 +219,13 @@ INSERT INTO `logos` (`id`, `logo`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `menus` (
   `id` int(10) UNSIGNED NOT NULL,
   `category_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `menus`
---
-
-INSERT INTO `menus` (`id`, `category_id`, `name`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(3, '6', 'SPECIAL PLATTER (for 2) (2 pieces each)', 'Description', '20', '1603514736XV2GkjVViIk5.jpeg', '2020-10-23 22:45:36', '2020-10-23 22:45:36'),
-(4, '4', 'CHICKEN TIKKA', 'CHICKEN TIKKA', '500', '1603515112VUvP0Kf7g2mH.jpg', '2020-10-23 22:51:52', '2020-10-23 22:51:52'),
-(5, '5', 'Chicken Polao', 'Chicken Polao', '55', '1603515150IeBbQiFYwojN.jpeg', '2020-10-23 22:52:30', '2020-10-23 22:52:30');
 
 -- --------------------------------------------------------
 
@@ -263,7 +259,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2020_10_19_070626_create_reservations_table', 10),
 (16, '2020_10_24_100958_create_order_items_table', 11),
 (17, '2020_10_24_101018_create_orders_table', 11),
-(18, '2020_10_24_111718_create_hours_table', 12);
+(18, '2020_10_24_111718_create_hours_table', 12),
+(20, '2020_10_27_071602_add_time_to_reservations', 13);
 
 -- --------------------------------------------------------
 
@@ -343,24 +340,20 @@ CREATE TABLE `reservations` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `time` date NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `reservations`
 --
 
-INSERT INTO `reservations` (`id`, `name`, `email`, `phone`, `date`, `time`, `created_at`, `updated_at`) VALUES
-(14, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '15:11', '0000-00-00', '2020-10-19 03:08:42', '2020-10-19 03:08:42'),
-(15, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '17:19', '0000-00-00', '2020-10-19 05:15:28', '2020-10-19 05:15:28'),
-(16, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '03:33', '0000-00-00', '2020-10-20 03:31:22', '2020-10-20 03:31:22'),
-(17, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '18:32', '0000-00-00', '2020-10-20 03:32:42', '2020-10-20 03:32:42'),
-(18, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '20:36', '0000-00-00', '2020-10-20 03:36:44', '2020-10-20 03:36:44'),
-(19, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '04:38', '0000-00-00', '2020-10-20 03:37:34', '2020-10-20 03:37:34'),
-(20, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '15:43', '2020-10-16', '2020-10-20 03:41:39', '2020-10-20 03:41:39'),
-(21, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '13:03', '2020-10-08', '2020-10-25 01:01:34', '2020-10-25 01:01:34');
+INSERT INTO `reservations` (`id`, `name`, `email`, `phone`, `date`, `created_at`, `updated_at`, `time`) VALUES
+(21, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '13:03', '2020-10-25 01:01:34', '2020-10-25 01:01:34', '0000-00-00'),
+(22, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '13:14', '2020-10-27 01:12:05', '2020-10-27 01:12:05', '0000-00-00'),
+(23, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '01:22', '2020-10-27 01:20:53', '2020-10-27 01:20:53', '0000-00-00'),
+(24, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', '+8801855570816', '17:23', '2020-10-27 01:23:12', '2020-10-27 01:23:12', '2020-10-07');
 
 -- --------------------------------------------------------
 
@@ -406,7 +399,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', NULL, '$2y$10$vZSUEHiVPS/BmpM98ilJxuzwQ3UhrEaP/TKbNVTrIneOqIuxAam72', NULL, '2020-10-22 02:43:32', '2020-10-22 02:43:32');
+(1, 'Foysal Rahman Nitu', 'foysalrahman112@gmail.com', NULL, '$2y$10$i/VmCPUZlUTsljPCjTS5luHNdmoIfpp0UNBtdgDJW0vRCcWdC7NOC', NULL, '2020-10-22 02:43:32', '2020-10-27 00:53:30');
 
 --
 -- Indexes for dumped tables
@@ -530,7 +523,7 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `chefs`
@@ -578,13 +571,13 @@ ALTER TABLE `logos`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -602,7 +595,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `sliders`
