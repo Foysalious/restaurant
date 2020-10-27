@@ -20,7 +20,8 @@
 	
 	<!-- the main js file -->
 	<script type="text/javascript" src="{{ asset('backend/js/main.js') }}" ></script>
-	<script type="text/javascript" src="{{ asset('frontend/js/toastr.js') }}" ></script>
+	<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
 
     <script type="text/javascript">
         $(document).ready( function () {

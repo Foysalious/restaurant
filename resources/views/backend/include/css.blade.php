@@ -23,3 +23,4 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/responsive.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/toastr.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/rte_theme_default.css') }}"> 
+
