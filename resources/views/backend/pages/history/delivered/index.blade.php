@@ -34,7 +34,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         </div>
-                                        {{-- <div class="modal-body">
+                                        <div class="modal-body">
                                             <form action="{{ route('report_picker') }}" method="post">
                                                 @csrf
                                                 <div class="form-group">
@@ -49,7 +49,7 @@
                                                     <button type="submit" class="btn btn-primary">Submit</button>
                                                 </div>
                                             </form>
-                                        </div> --}}
+                                        </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         </div>
@@ -57,9 +57,9 @@
                                     </div>
                                 </div>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a class="btn btn-outline-secondary"  href="{{route('download_today')}}">Download Todays history</a>
-                        </li> --}}
+                        </li>
                     </ul>
                 </div>
             </div>

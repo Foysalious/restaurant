@@ -111,6 +111,13 @@ Route::group(['prefix' => 'adminContact'], function(){
     Route::post('/delete/{contact:id}',[contactController::class,'destroy'])->name('contactDelete');
 });
 
+Route::group(['prefix' => 'my-profile'], function(){
+    Route::get('/{user:id}',[ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/update/{user:id}',[ProfileController::class,'update'])->name('profile.update');
+    Route::post('/update-password/{user:id}',[ProfileController::class,'updatePassword'])->name('password.update');
+    Route::post('/delete-profile/{user:id}',[ProfileController::class,'destroy'])->name('profile.delete');
+});
+
 Route::group(['prefix'=>'selling-history'],function(){
 
     //pending order start
@@ -137,6 +144,9 @@ Route::group(['prefix'=>'selling-history'],function(){
 
 
 });
+Route::get('/excel', [frontendController::class, 'export'])->name('download_today');
+Route::post('/export/pick', [frontendController::class, 'exportToDateFromDate'])->name('report_picker');
+
 
 
 Route::group(['prefix' => 'reservation'], function(){
