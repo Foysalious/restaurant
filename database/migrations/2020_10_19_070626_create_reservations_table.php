@@ -19,7 +19,6 @@ class CreateReservationsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('date');
-            $table->text('time');
             $table->timestamps();
         });
     }

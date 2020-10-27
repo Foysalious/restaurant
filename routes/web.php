@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\menuController;
 use App\Http\Controllers\Backend\openDayController;
 use App\Http\Controllers\Backend\orderController;
 use App\Http\Controllers\Backend\reservationController;
+use App\Http\Controllers\Backend\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\templateController;
 use App\Http\Controllers\frontendController;

@@ -37,6 +37,7 @@
                                 <td>name</td>
                                 <td>email</td>
                                 <td>phone</td>
+                                <td>time</td>
                                 <td>date</td>
                             </tr>
                         </thead>
@@ -58,6 +59,11 @@
                                  </td>
                                  <td>
                                     {{$reservation->date}}
+                                 </td>
+                                 <td>
+                                  
+
+                                    {{ $reservation->time }}
                                  </td>
                                 
                             </tr>
