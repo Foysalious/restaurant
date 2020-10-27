@@ -33,8 +33,12 @@
 
 						@foreach(App\Models\menu::orderBy('id','asc')->where('category_id',$category->id)->get() as $menu) 
 						<div class="col-md-6 col-12 menus d-flex ftco-animate">
+							@if ($menu->image==NULL)
+							<div class="menu-img img" style="background-image: url({{asset('images/menu/test.jpeg')}});">
+	
+							@else
 							<div class="menu-img img" style="background-image: url({{asset('images/menu/'.$menu->image)}});">
-								
+							@endif	
 							</div>
 							<div class="food-detail text ">
 								<div class="add_to_cart "data-id="{{ $menu->id }}" >
