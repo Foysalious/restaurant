@@ -39,12 +39,34 @@
                                                 @csrf
                                                 <div class="form-group">
                                                     <label>Date From</label>
-                                                    <input type="date" class="form-control" name="from">
+                                                    <input type="date" id="start_date" class="form-control"  name="from">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Date To</label>
-                                                    <input type="date" class="form-control" name="to">
+                                                    <input type="date" id="end_date" class="form-control" name="to">
                                                 </div>
+                                                <script>
+                                                    var today = new Date();
+                                                    var dd = String(today.getDate()).padStart(2, '0');
+                                                    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                                    var yyyy = today.getFullYear();
+
+                                                    today = yyyy + "-" + mm + "-"+ dd;
+                                                    document.getElementById('end_date').setAttribute("max", today)
+                                                    document.getElementById('start_date').setAttribute("max", today)
+                                          
+
+                                                    document.getElementById('end_date').onchange = (e) => {
+                                                        document.getElementById('start_date').setAttribute("max", e.target.value)
+                                                     
+                                                    }
+
+                                                    document.getElementById('start_date').onchange = (e) => {
+                                                        document.getElementById('end_date').setAttribute("min", e.target.value)
+                                                     
+                                                    }
+
+                                                </script>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-primary">Submit</button>
                                                 </div>

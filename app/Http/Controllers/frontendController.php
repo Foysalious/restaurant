@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use Excel;
 
 
+
 class frontendController extends Controller
 {
     public function contact()
@@ -145,7 +146,7 @@ class frontendController extends Controller
         $data = order::whereDate('updated_at', Carbon::today())->where("order_status", 3)->get();
  
         $export = new ReportExport();
-        return Excel::download($export->getDownloadByQuery($data), 'report - '.Carbon::today()->toDateString().'.csv');
+        return Excel::download($export->getDownloadByQuery($data), 'Todaysreport - '.Carbon::today()->toDateString().'.csv');
 
 
     }
@@ -154,7 +155,7 @@ class frontendController extends Controller
         $data = order::whereBetween('updated_at', [Carbon::parse($request->from),Carbon::parse($request->to)->addDay()])->orderBy('id','desc')->get();
 
         $export = new ReportExport();
-        return Excel::download($export->getDownloadByQuery($data), 'report - '.Carbon::parse($request->from)->toDateString().' - '.Carbon::parse($request->to)->toDateString().'.csv');
+        return Excel::download($export->getDownloadByQuery($data), 'DayWiseReport - '.Carbon::parse($request->from)->toDateString().' - '.Carbon::parse($request->to)->toDateString().'.csv');
 
 
     }
