@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 use App\Exports\ReportExport;
 use Carbon\Carbon;
-use Maatwebsite\Excel\Excel;
+use Excel;
 
 
 class frontendController extends Controller
