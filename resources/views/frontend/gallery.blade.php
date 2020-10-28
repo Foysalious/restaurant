@@ -24,49 +24,20 @@
 
             <div class="col-md-12 gallery-row">
 
+                @foreach(App\Models\gallery::orderBy('id','desc')->get() as $gallery) 
                 <!-- gallery item start -->
                 <div class="gallery-item">
-                    <img src="{{asset('frontend/images/dessert-1.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset('images/gallery/'.$gallery->image)}}" class="img-fluid" alt="">
                     <div class="gallery-hover">
-                        <a data-fancybox="gallery" href="{{asset('frontend/images/dessert-1.jpg')}}">
+                        <a data-fancybox="gallery" href="{{asset('images/gallery/'.$gallery->image)}}">
                             <i class="fas fa-search"></i>
                         </a>
                     </div>
                 </div>
+                @endforeach
                 <!-- gallery item end -->
 
-                <!-- gallery item start -->
-                <div class="gallery-item">
-                    <img src="{{asset('frontend/images/dessert-2.jpg')}}" class="img-fluid" alt="">
-                    <div class="gallery-hover">
-                        <a data-fancybox="gallery" href="{{asset('frontend/images/dessert-2.jpg')}}">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- gallery item end -->
-
-                <!-- gallery item start -->
-                <div class="gallery-item">
-                    <img src="{{asset('frontend/images/dessert-3.jpg')}}" class="img-fluid" alt="">
-                    <div class="gallery-hover">
-                        <a data-fancybox="gallery" href="{{asset('frontend/images/dessert-3.jpg')}}">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- gallery item end -->
-
-                <!-- gallery item start -->
-                <div class="gallery-item">
-                    <img src="{{asset('frontend/images/dessert-4.jpg')}}" class="img-fluid" alt="">
-                    <div class="gallery-hover">
-                        <a data-fancybox="gallery" href="{{asset('frontend/images/dessert-4.jpg')}}">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- gallery item end -->
+               
 
             </div>
 
