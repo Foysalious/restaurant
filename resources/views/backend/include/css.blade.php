@@ -1,5 +1,6 @@
 <!-- Favicon -->
-<link type="image/gif" rel="shortcut icon" href="{{ asset('backend/images/fav.png') }}">
+
+<link rel="icon" href="{{asset('images/logo/logo.png')}}" type="image/gif" sizes="16x16">
 
 <!-- fonts file -->
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">

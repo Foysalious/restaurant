@@ -18,10 +18,10 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
-	<link type="image/gif" rel="shortcut icon" href="images/fav.png">
+	
 
 	<link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}">
-
+	<link rel="icon" href="{{asset('images/logo/logo.png')}}" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
 	<link rel="stylesheet" href="{{asset('frontend/css/owl.theme.default.min.css')}}">
 	<link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.css')}}">
