@@ -9,7 +9,7 @@ use App\Models\orderItem;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use Brian2694\Toastr\Facades\Toastr;
 use App\Exports\ReportExport;
 use Carbon\Carbon;
 use Excel;
@@ -138,7 +138,9 @@ class frontendController extends Controller
 
         Mail::to($order->email)->send(new OrderPlaceMail($order,'Your order has been placed'));
         Mail::to('test@gmail.com')->send(new OrderPlaceMail($order,'Order placed'));
-        return Response("Order Placed Successfully!", 200);
+        
+        Toastr::success('Order Placed,We will call you soon');
+        return redirect()->route('menu');
     }
     
     
