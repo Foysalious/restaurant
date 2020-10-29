@@ -78,7 +78,7 @@
                                 Home Page Slider
                             </div>
                             <div class="right">
-                                <i class="fas fa-bars"></i>
+                                <i class="fas fa-sliders-h"></i>
                             </div>
                             </a>
                         </li>
@@ -92,7 +92,7 @@
                                 About US
                             </div>
                             <div class="right">
-                                <i class="fas fa-bars"></i>
+                                <i class="fas fa-address-card"></i>
                             </div>
                             </a>
                         </li>
@@ -106,7 +106,7 @@
                                Chef
                             </div>
                             <div class="right">
-                                <i class="fas fa-bars"></i>
+                                <i class="fas fa-chess-king"></i>
                             </div>
                             </a>
                         </li>
@@ -122,7 +122,7 @@
                                Gallery
                             </div>
                             <div class="right">
-                                <i class="fas fa-bars"></i>
+                                <i class="fab fa-envira"></i>
                             </div>
                             </a>
                         </li>
@@ -170,7 +170,7 @@
                                Contact Info
                             </div>
                             <div class="right">
-                                <i class="fas fa-bars"></i>
+                                <i class="fas fa-id-card"></i>
                             </div>
                             </a>
                         </li>
@@ -193,18 +193,12 @@
 
                         
                        
-                        <!-- nav single view end -->
-
-                        
-
-                        
                        
-                        <!-- nav single view end -->
                         <!-- nav drop down view start -->
                         <li>
                             <div class="row navbar-dropdown-top" id="2">
                             <div class="col-md-10  col-10">
-                                Selling History              
+                                selling history           
                             </div>    
                             <div class="col-md-2 col-2 text-right">
                                 <i class="fas fa-angle-down"></i>                            
