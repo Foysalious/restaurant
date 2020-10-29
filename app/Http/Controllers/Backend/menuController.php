@@ -54,7 +54,7 @@ class menuController extends Controller
             $menu->image = $img;
         }
         $menu->save();
-        Toastr::success('Menu Created');
+        Toastr::success('Banner Image Created');
 
         return redirect()->route('menuShow');
     }

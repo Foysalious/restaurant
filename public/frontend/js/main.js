@@ -365,6 +365,7 @@ $(document).ready(function(){
 				"transform" : "translateX(0)",
 				"transition": "0.4s ease-in-out"
 			})
+			swal('','Food added to the card','success')
 			show_cart_item()
 		})
 	})
@@ -427,7 +428,8 @@ function delete_cart_init(){
 	for(let i in delete_button){
 		delete_button[i].onclick = (e) => {
 				axios.delete(`/delete/${e.target.dataset.id}`).then(
-					show_cart_item()
+					show_cart_item(),
+					
 				)
 		}
 	}

@@ -14,7 +14,7 @@
 
 			<!-- banner item start -->
 			@foreach(App\Models\slider::orderBy('id','desc')->get() as $slider) 
-			<div class="slider-item js-fullheight" style="background-image:url({{asset('images/slider/'.$slider->image)}});">
+			<div class="slider-item js-fullheight" style="background-image:url({{asset('images/slider/'.$slider->image)}})">
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -39,7 +39,7 @@
 	<!-- banner end -->
 
 	<!--  about section start-->
-	<section class="about">
+	{{-- <section class="about">
 		<div class="container">
 
 			<div class="row">
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!--  about section end-->
 
 	<!-- booking section start -->
@@ -104,9 +104,25 @@
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="date" class="form-control" name="time">
+									<input type="date" id="start_date" class="form-control" name="time">
 								</div>
 							</div>
+							<script>
+								var today = new Date();
+								var dd = String(today.getDate()).padStart(2, '0');
+								var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+								var yyyy = today.getFullYear();
+
+								today = yyyy + "-" + mm + "-"+ dd;
+								
+								document.getElementById('start_date').setAttribute("min", today)
+					  
+
+								
+
+								
+
+							</script>
 							<div class="col-md-12">
 								<div class="form-group">
 									<button type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">Book Your Table Now</button>
@@ -157,7 +173,7 @@
 				@foreach(App\Models\Chef::orderBy('id','desc')->get() as $chef) 
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="staff">
-						<div class="img" style="background-image: url({{asset('images/chef/'.$chef->image)}});"></div>
+						<div class="img" style="background-image: url({{asset('images/chef/'.$chef->image)}})"></div>
 						<div class="text px-4 pt-2">
 							<h3>{{$chef->name}}</h3>
 						<span class="position mb-2">{{$chef->designation}}</span>
@@ -181,7 +197,7 @@
 			<div class="row py-2">
 				<div class="col-md-12 text-center">
 					<h2>We Make Delicious &amp; Nutritious Food</h2>
-					<a href="index.html#booking" class="btn btn-white btn-outline-white">Book A Table Now</a>
+					<a href="{{ route('index') }}#booking" class="btn btn-white btn-outline-white">Book A Table Now</a>
 				</div>
 			</div>
 		</div>

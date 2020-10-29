@@ -34,7 +34,7 @@
 
                         <!-- nav single view start -->
                         <li >
-                            <a href="">
+                            <a href="{{ route('backend_dashboard') }}">
                             <div class="left">
                                     dashboard
                             </div>
@@ -52,7 +52,7 @@
                                     hours
                             </div>
                             <div class="right">
-                                    <i class="fas fa-home"></i>
+                                    <i class="fas fa-clock"></i>
                             </div>
                             </a>
                         </li>

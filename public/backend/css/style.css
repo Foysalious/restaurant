@@ -107,39 +107,39 @@ tr{
     text-align: center;
 }
 .btn-primary, .btn-secondary{
-    background: #dd2173;
-    border: 1px solid #dd2173;
+    background: #987B4E;
+    border: 1px solid #987B4E;
 }
 .badge-primary{
-    background: #dd2173;
-    border: 1px solid #dd2173;
+    background: #987B4E;
+    border: 1px solid #987B4E;
 }
 .btn-primary:hover, .btn-secondary:hover{
-    color: #dd2173;
+    color: #987B4E;
     background: white;
     border: 1px solid white;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active, 
 .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
-    color: #dd2173;
+    color: #987B4E;
     background: white;
     border: 1px solid white;
 }
 .btn-secondary:not(:disabled):not(.disabled).active, 
 .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
-    color: #dd2173;
+    color: #987B4E;
     background: white;
     border: 1px solid white;
 }
 .form-control:focus{
-    border: 1px solid #dd2173;
+    border: 1px solid #987B4E;
 }
 table{
     width: 100%!important;
 }
 .modal-body table thead tr{
-        background: #dd2173!important;
+        background: #987B4E!important;
 }
 .rte-modern.rte-desktop.rte-toolbar-default{
     min-width: unset !important;
@@ -204,7 +204,7 @@ table{
     
 }
 .profile-dropdown ul li a:hover{
-    background: #dd2173;
+    background: #987B4E;
     color: white;
 }
 .user-admin:hover .profile-dropdown{
@@ -259,7 +259,7 @@ table{
     margin: 15px 0;
 }
 .nav-item ul li a:hover{
-    color: #dd2173;
+    color: #987B4E;
 }
 .navbar-dropdown-top{
     cursor: pointer;
@@ -307,7 +307,7 @@ table{
     font-weight: 700;
 }
 .page-indicator ul li .fas{
-    background: #dd2173;
+    background: #987B4E;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -350,7 +350,7 @@ section{
     width: max-content;
 }
 .text-available{
-    color: #dd2173;
+    color: #987B4E;
 }
 .text-occupied{
     color: #488fe0;
@@ -359,11 +359,11 @@ table{
     box-shadow: #dad9d9 0px 7px 16px -3px;
 }
 table thead tr{
-    background: #5a256c;
+    background: #987B4E;
     color: white;
 }
 .stat-card{
-    background: #5a256c;
+    background: #987B4E;
     padding: 15px;
     text-align: center;
     transition: 0.4s ease-in-out;
@@ -407,7 +407,7 @@ table thead tr{
 /* login page css start */
 .auth{
     position: relative;
-    background: #dd2173;
+    background: #987B4E;
 }
 .auth .container{
     height: 100vh;
@@ -435,7 +435,7 @@ table thead tr{
     margin: 0 auto 15px auto;
 }
 .submit-btn{
-    background: #dd2173; 
+    background: #987B4E; 
     color: white;
     border: none;
     border-radius: 0px;
@@ -444,22 +444,22 @@ table thead tr{
     padding: 10px 20px;
 }
 .submit-btn:hover{
-    color: #dd2173;
+    color: #987B4E;
     background: white;
 }
 .auth-form .form-control:focus{
-    border: 1px solid #dd2173;
+    border: 1px solid #987B4E;
 }
 .auth-card a{
     display: block;
     text-align: center;
 }
 .auth-card a:hover{
-    color: #dd2173;
+    color: #987B4E;
 }
 .input-group-text{
-    background-color: #dd2173;
-    border: 1px solid #dd2173;
+    background-color: #987B4E;
+    border: 1px solid #987B4E;
     color: white;
 }
 /* login page css end */
