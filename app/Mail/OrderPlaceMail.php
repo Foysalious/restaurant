@@ -31,6 +31,6 @@ class OrderPlaceMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.OrderPlaceMail', ['order'=> $this->order]);
+        return $this->markdown('emails.orderplacemail', ['order'=> $this->order]);
     }
 }

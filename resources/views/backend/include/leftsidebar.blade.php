@@ -135,7 +135,7 @@
                         <li >
                             <a href="{{route('categoryShow')}}">
                             <div class="left">
-                               Category
+                               Menu
                             </div>
                             <div class="right">
                                 <i class="fas fa-bars"></i>
@@ -151,7 +151,7 @@
                         <li >
                             <a href="{{route('menuShow')}}">
                             <div class="left">
-                               Menu
+                               Food
                             </div>
                             <div class="right">
                                 <i class="fas fa-bars"></i>

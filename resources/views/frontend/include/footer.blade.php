@@ -3,13 +3,21 @@
         <div class="row mb-5">
             <div class="col-md-6 col-lg-4">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Taste.it</h2>
+                <a href="{{ route('index') }}">
+                        @foreach(App\Models\Logo::orderBy('id','desc')->get() as $logo) 
+        
+                        <img src="{{asset('images/Logo/'.$logo->logo)}}" width="100px" alt="">
+            
+                        @endforeach
+                    </a>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                         there live the blind texts. Separated they live in Bookmarksgrove</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                        @foreach(App\Models\contact::orderBy('id','desc')->get() as $contact) 
+                    <li class="ftco-animate"><a href="{{$contact->twitter}}"><span class="fa fa-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="{{$contact->facebook}}"><span class="fa fa-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="{{$contact->instagram}}"><span class="fa fa-instagram"></span></a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -17,13 +25,9 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Open Hours</h2>
                     <ul class="list-unstyled open-hours">
-                        <li class="d-flex"><span>Monday</span><span>9:00 - 24:00</span></li>
-                        <li class="d-flex"><span>Tuesday</span><span>9:00 - 24:00</span></li>
-                        <li class="d-flex"><span>Wednesday</span><span>9:00 - 24:00</span></li>
-                        <li class="d-flex"><span>Thursday</span><span>9:00 - 24:00</span></li>
-                        <li class="d-flex"><span>Friday</span><span>9:00 - 02:00</span></li>
-                        <li class="d-flex"><span>Saturday</span><span>9:00 - 02:00</span></li>
-                        <li class="d-flex"><span>Sunday</span><span> Closed</span></li>
+                        @foreach(App\Models\hours::orderBy('id','desc')->get() as $hour) 
+                        <li class="d-flex"><span>{{$hour->day}}</span><span>{{$hour->time}}</span></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

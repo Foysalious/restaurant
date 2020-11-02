@@ -172,6 +172,16 @@
                                         </div>    
                                                                       
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>About info</label>
+                                                
+                                                <textarea name="info" class="ckeditor" ></textarea>                                  
+                                            </div>                                      
+                                        </div>    
+                                                                      
+                                    </div>
                                     
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">Add</button>                                    
@@ -207,6 +217,7 @@
                                 <td>twitter</td>
                                 <td>instagram</td>
                                 <td>youtube</td>
+                                <td>About Info</td>
                                
                                 <td>action</td>
                             </tr>
@@ -227,6 +238,7 @@
                                 <td> {{$contact->twitter}} </td>
                                 <td> {{$contact->instagram}} </td>
                                 <td> {{$contact->youtube}} </td>
+                                <td> {!!$contact->info!!} </td>
                                 <td>
                                 
                                 <!-- edit start -->
@@ -329,6 +341,17 @@
                                                         <label>Twitter</label>
                                                         
                                                         <input type="text" class="form-control-file" name="twitter" value="{{$contact->twitter}}">                                 
+                                                    </div>                                      
+                                                </div>    
+                                                                              
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>About info</label>
+                                                        
+                                                        <textarea name="info" class="ckeditor" >{!!$contact->info!!}</textarea>                                  
                                                     </div>                                      
                                                 </div>    
                                                                               

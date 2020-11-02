@@ -49,6 +49,7 @@ class contactController extends Controller
         $contact->twitter=$request->twitter;
         $contact->instagram	=$request->instagram;
         $contact->youtube	=$request->youtube;
+        $contact->info	=$request->info; 
 
         $contact->save();
         Toastr::success('contact Created');
@@ -96,6 +97,7 @@ class contactController extends Controller
         $contact->twitter=$request->twitter;
         $contact->instagram	=$request->instagram;
         $contact->youtube	=$request->youtube;
+        $contact->info	=$request->info; 
 
         $contact->save();
         Toastr::success('contact Created');

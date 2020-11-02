@@ -17,7 +17,7 @@
                 <li class="nav-item"><a href="{{route('index')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{route('menu')}}" class="nav-link">Menu</a></li>
                 <li class="nav-item"><a href="{{route('gallery')}}" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="{{route('index')}}" class="nav-link">Reservation</a></li>
+                <li class="nav-item"><a href="{{route('index')}}#booking" class="nav-link">Reservation</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
                 <li class="nav-item main-cart" style="position: relative;">
                     <i class="fas fa-shopping-cart" style="color: #987B4E;"></i>

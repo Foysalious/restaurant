@@ -143,7 +143,7 @@
 						<div class="col-md-12 col-lg-7">
 							<div class="heading-section mt-5 mb-4">
 								<div class="pl-lg-3 ml-md-5">
-									<span class="subheading">About</span>
+									<span class="subheading" style="margin-bottom: 15px">About</span>
 								<h2 class="mb-4">{{$about->title}}</h2>
 								</div>
 							</div>
@@ -164,7 +164,7 @@
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-2">
 				<div class="col-md-7 text-center heading-section ftco-animate">
-					<span class="subheading">Chef</span>
+					<span class="subheading" style="margin-bottom: 15px">Chef</span>
 					<h2 class="mb-4">Our Master Chef</h2>
 				</div>
 			</div>

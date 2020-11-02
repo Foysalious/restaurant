@@ -23,8 +23,9 @@ class CreateContactsTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
+            $table->longText('info')->nullable();
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
