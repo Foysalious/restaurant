@@ -23,6 +23,7 @@ class reservationController extends Controller
         $reservation->phone          = $request->phone;
         $reservation->date          = $request->date;
         $reservation->time          = $request->time;
+        $reservation->random        = rand(10000,9999999);
         
        
        Mail::to('foysalrahman112@gmail.com')->send(new ReservationMail($reservation));
