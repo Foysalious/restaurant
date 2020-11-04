@@ -45,5 +45,24 @@
     </h3>
     <p>{{ $reservation['time'] }}</p>
 </div>
+
+<div>
+    <h3>
+        <b>
+            Unique Code
+        </b>
+    </h3>
+    <p>{{ $reservation['random'] }}</p>
+    
+</div>
+
+<div>
+    <h3>
+        <b>
+           QR Code
+        </b>
+    </h3>
+    {!!QrCode::size(200)->generate($reservation['random']);!!}
+    
+</div>
 @endcomponent
- 
